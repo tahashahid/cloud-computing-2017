@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        /*
+        
+        function User(name){
+            this.name = name;
+            console.log(name + " User Created");
+        }
+        User.prototype.sleeping = function(){
+            console.log(this.name + " User is Sleeping");
+        }
+
+        var users = [];
+        for(var i = 0; i < 10000; i++){
+            var tmp = new User("Rehan");
+            users.push(tmp);
+            tmp.sleeping();
+        }
+
+
+        var users = [];
+        for(var i = 0; i < 10000; i++){
+            var tmp = {
+                name : "Rehan",
+                sleeping : function(){
+                    console.log(this.name + " User is Sleeping");
+                }
+            }
+            users.push(tmp);
+            tmp.sleeping();
+        }
+
+        */
+
+
+        function User(name){
+            this.name = name;
+            console.log(name + " User Created");
+        }
+        User.prototype.sleeping = function(){
+            console.log(this.name + " User is Sleeping");
+        }
+
+        function Student(){
+            console.log("Student Created");
+        }
+
+        Student.prototype = Object.create(User.prototype);
+
+        Student.prototype.sleeping = function(){
+            console.log("Student is Sleeping")
+        }
+
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
