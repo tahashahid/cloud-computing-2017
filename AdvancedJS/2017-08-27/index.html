@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <script>
+        // var a = 10;
+
+        // console.log(window);
+
+        // function func(){
+        //     var a = 20;
+        //     console.log(this.a)
+        // }
+
+        // func(a)
+
+        // function append(id, data){
+        //     document.getElementById(id).innerText = data;
+        // }
+
+        // append('dev1', 'hello');
+
+
+       
+    </script>
+
+</head>
+<body>
+    <div id="mydiv1"></div>
+    <div id="mydiv"></div>
+    <script>
+     function printMessage(elementId, format, message){
+        document.querySelector('#'+elementId).innerHTML =
+        '<'+format+'>'+message+'</'+format+'>'
+     }
+        printMessage("mydiv1","h1","Hello")
+        printMessage("mydiv","h2","Hello World")
+    </script>
+</body>
+</html>

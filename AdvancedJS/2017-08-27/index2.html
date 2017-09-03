@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var collection = [1,5,23,7,87];
+        // var netSalary = [];
+        // for(var i = 0; i <collection.length; i++){
+        //     netSalary.push( collection[i] * 2 );
+            
+        // }
+        // console.log(collection, netSalary);
+
+
+        var collection = [1,5,23,7,87];
+        var netSalary = collection.map(x => x * 2);
+
+        // console.log(collection, netSalary);
+
+
+
+        var collection = [1,5,23,7,87];
+        var netSalary = [];
+        for(var i = 0; i <collection.length; i++){
+            // netSalary.push( collection[i] * 2 );
+            calc( collection[i] );
+        }
+        function calc (x){
+            netSalary.push(x * 2);
+        }
+        console.log(collection, netSalary);
+
+        // var collection = [1,5,23,7,87];
+        // var netSalary = collection.map(function(x){
+        //     return x * 2;
+        // });
+
+        // collection.map1();
+
+        // console.log(collection, netSalary);
+
+        // function callback (){
+        //     console.log('done');
+        // }
+
+        // var c;
+        // var a = 1;
+        // var b = 2;
+        // function sum(a, b){
+        //     return a + b + Date.now();
+        // }
+        // c = sum(a, b);
+
+        // function fn (cb){
+        //     console.log('inside fn')
+        //     cb();
+        // }
+
+        // fn(function(){
+        //     console.log('cb');
+        // });
+        
+
+        // var currentLocation = 'nipa';
+        // function nipatogul(nextTask){
+        //     console.log('nipatogul : ' + currentLocation);
+        //     setTimeout(function (){
+        //         currentLocation = 'gulshan';
+        //         console.log(currentLocation)
+        //         nextTask();
+        //     }, 5000);
+        // }
+
+        // function gultonag(){
+        //     console.log('gultonag : ' + currentLocation);
+        //     setTimeout(function (){
+        //         currentLocation = 'nagan';
+        //         console.log(currentLocation)
+        //     }, 3000);
+        // }
+
+        // nipatogul( gultonag );
+
+        var x = {a : 10};
+        function calc (item){
+            item.b = 20;
+        }
+
+        calc(x)
+        console.log(x);
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+
+    <div id="mydiv1">
+
+    </div>
+</body>
+<script>
+    
+    function printMessage(elementId, format, message){
+        //document.querySelector('#mydiv').innerHTML = '<h3>Hello World</h3>';
+        //format = 
+        document.querySelector('#'+elementId).innerHTML = '<'+format+'>'+message+'</'+format+'>'
+    }
+
+
+    printMessage("mydiv1","h1","Hello")
+    printMessage("mydiv","h2","Hello World")
+    
+</script>
+</html>

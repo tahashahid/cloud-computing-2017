@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+    
+    <div id="data">
+
+    </div>
+</body>
+<script>
+    //Decomposition of complex tasks
+    function find(){
+        // find Logic
+
+        var stu = {
+            name: "Arsalan",
+            age: 20
+        }
+        return stu;
+    }
+
+    function csv(student){
+        return "Name = "+student.name+ ", Age = "+student.age;
+    }
+
+    function append(info){
+        document.querySelector("#data").innerHTML = info;
+    }
+
+    var stu = {
+        name: "Yousuf",
+        age: 12
+    }
+    var info = csv(stu);
+    alert(info);
+    //append("Hello World");
+    append(info);
+
+
+</script>
+</html>
