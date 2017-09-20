@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // function fn1(){
+
+        // }
+
+        // function fn2(a){
+        //     console.log(a);
+        //     if(true){
+        //         return 0;
+        //     }
+        //     fn2(a);
+        // }
+
+        // fn2(2);
+
+        function fac(num){
+            if(num == 1) {
+                console.log(num)
+                return 1
+            }else{
+                console.log(num)
+                return num * fac(num - 1);
+            }
+        }
+        // console.log('fac', fac(3));
+
+
+        var routes = ['nippa', 'hassan', 'jamsh', 'mazar', 'ma'];
+
+        // for(var i = 0; i < route.length; i++){
+        //     (function(r){
+        //         setTimeout(function(){
+        //             console.log(r);
+        //         }, Math.ceil(Math.random() * 1000))
+        //     })(route[i]);
+        // }
+
+
+        function routing(routes, index){
+            if(!routes[index]){
+                console.log('reached');
+                return false;
+            }
+            setTimeout(function(){
+                console.log(routes[index]);
+                routing(routes, index + 1)
+            }, Math.ceil(Math.random() * 1000));
+
+        }
+
+        routing(routes, 0);
+
+
+
+
+    </script>
+</body>
+</html>

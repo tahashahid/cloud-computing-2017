@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function func(){
+            return function fn1(){
+
+            }
+        }
+
+
+
+
+
+        // var _0To100 = 5;
+        // var _101To200 = 10;
+        // var _200To300 = 15;
+
+        // var emp1 = 100;
+        // var emp2 = 200;
+        // var emp3 = 50;
+        // var emp4 = 250;
+
+        // // var percentage = 2;
+        // function calc(a, per = 2){
+        //     emp1
+        //     return a * per;
+        // }
+
+        // calc(emp1, _0To100);
+        // calc(100);
+        // calc(200);
+
+        // var userInput = 2;
+        var collection = [2,4,3,4,5,67,75,4,9,6,75];
+
+        function sumWith(a){
+            // return a;
+            return function(b){
+                return a + b;
+            }
+        }
+
+        var addBy2 = sumWith(2);
+        var addBy3 = sumWith(3);
+        for(var i = 0; i < collection.length; i++ ){
+            var result;
+            if(collection[i] > 5){
+                result = addBy3(collection[i])
+            }else{
+                result = addBy2(collection[i])
+            }
+            console.log(collection[i] + ' : ' + result)
+        }
+
+        var calc = {
+            'addWith2': sumWith(2)
+        }
+        calc['addWith2']();
+
+        // var a = 
+
+
+            // var sw2 = sumWith(2);
+            // var sw3 = sumWith(3);
+            // sw2(5); 
+            // sw2(5);
+            // sw2(7);
+            // sw2(7);
+            // sw3(10);
+            
+
+         
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
