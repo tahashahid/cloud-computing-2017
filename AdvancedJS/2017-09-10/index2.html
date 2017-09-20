@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    // var add = function (...rest){
+    //     console.log('value1 : ' + value1, 'value2 : ' + value2);
+    //     console.log('restValues : ' + restValues);
+    //     var result = 0;
+    //     restValues.map( x => result = result + x ) 
+    //     return result;
+    // }
+
+    // console.log( add(1, 2, 3, 4, 5) );
+    // console.log( add("1", 2) );
+
+    var add = function (value1, value2 = 10){
+        console.log(arguments)
+        return value1 + value2;
+    }
+    // console.log( add.call(null, 2, 3) );
+    // console.log( add.apply(null, [2, 3]) );
+    // console.log( add(    1, undefined) );
+
+    var obj = {
+        name: 'abc',
+        net: 0,
+        gross: 50,
+        sleeping: function(){
+            console.log(this.name, 'sleeping')
+        }
+    }
+    var obj2 = {
+        net: 0,
+        gross: 100,
+        name: 'taha'
+    }
+    obj.sleeping();
+    obj.sleeping.call(obj2)
+
+    function calcSalary(){
+        this.net = this.gross * 2;
+        console.log(this.net, this.gross)
+    }
+
+    // calcSalary.call(obj);
+    // calcSalary.call(obj2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
