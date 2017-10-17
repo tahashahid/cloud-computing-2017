@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var current = 'nippa';
+        // console.log("current location : ", current);
+        // setTimeout(function() {
+        //     console.log("current location : ", current);
+        //     current = 'civic center';
+        //     console.log("current location : ", current);
+            
+        //     setTimeout(function() {
+        //         console.log("current location : ", current);
+        //         current = 'mazar-e-quaid';
+        //         console.log("current location : ", current);
+        //         setTimeout(function() {
+        //             console.log("current location : ", current);
+        //             current = 'sadar';
+        //             console.log("current location : ", current);
+        //             setTimeout(function() {
+        //                 console.log("current location : ", current);
+        //                 current = 'tower';
+        //                 console.log("current location : ", current);
+        //             }, 3000);
+        //         }, 2000);
+        //     }, 2000);
+        // }, 5000);
+        var current = 'nippa';
+        var promise = new Promise(function(resolve){
+            setTimeout(function(){
+                current = 'civic center';
+                resolve();
+            }, 5000);
+        });
+
+        promise
+            .then(function(){
+                console.log(current);
+                var promise2 = new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        current = 'mazar-e-quaid';
+                        reject('error');
+                    }, 2000)
+                });
+                return promise2;
+            })
+            .then(function(){
+                console.log(current);
+            }, function(err){
+                console.log(err);
+            })
+
+
+
+
+
+
+            // .then(function(){
+            //     console.log(current);
+            //     var promise3 = new Promise(function(resolve){
+            //         setTimeout(function(){
+            //             console.log('test');
+            //             resolve();
+            //         }, 2000)
+            //     })
+            //     return promise3;
+            // })
+            // .then(function(){
+            //     console.log(current);
+            // })
+            // .then(function(){
+            //     console.log(current);
+            // })
+            
+
+        
+    </script>
+</body>
+</html>

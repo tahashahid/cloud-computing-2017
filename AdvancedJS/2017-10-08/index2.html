@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    class Human {
+        sleep(){
+            console.log('sleeping');
+        }
+        eat(){
+            console.log('eating');
+        }
+    }
+    
+    class Student extends Human {
+        constructor(name){
+            super();
+            console.log('class Student');
+            this.name = name;
+            // this.age = age;
+            this.study();
+        }
+
+        study(){
+            console.log(this.name, " studying");
+        }
+
+    }
+    var stu = new Student('xyz');
+    var stu2 = new Student('abc');
+    console.log(stu.name)
+    console.log(stu2.name)
+    stu2.study();
+    stu2.sleep();
+
+
+    </script>
+</body>
+</html>
