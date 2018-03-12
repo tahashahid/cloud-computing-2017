@@ -59,49 +59,53 @@ const styles = StyleSheet.create({
 */
 
 
+
+
 import React, { Component } from 'react';
-import { Text, Image, View, StyleSheet } from 'react-native';
+import { Text, Image, View, StyleSheet, StatusBar, TextInput, Button} from 'react-native';
 
-export default class HelloWorldApp extends Component {
-  render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
-    return (
-      <View style={{alignItems: 'center'}}>
-        <Text style={styles.red}>just red</Text>
-        
-        <Greeting name='Rexxar' />
-        <Greeting name='Jaina' />
-        <Greeting name='Valeera' />
+import {
+  StackNavigator,
+} from 'react-navigation';
 
-        <Text>
-          Hello world!
-          <Text>Taha!</Text>
-          <Image source={pic} style={{width: 193, height: 110}}/>
-        </Text>
-      </View>
-      
-     
-    );
-  }
-}
-
-class Greeting extends Component {
-  render() {
-    return (
-      <Text>Hello {this.props.name}!</Text>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
-  },
+const App = StackNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen },
 });
+//export default App;
+
+export default class  HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+  render() {
+    const navigate = (a,b)={};
+    //this.props.navigation
+    return (
+      <Button
+        title="Go to Jane's profile"
+        onPress={() =>
+          navigate('Profile', { name: 'Jane' })
+        }
+      />
+    );
+  }
+}
+
+class ProfileScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+  render() {
+    //const { navigate } = this.props.navigation;
+    const navigate = (a,b)={};
+    return (
+      <Button
+        title="Go to Jane's profile"
+        onPress={() =>
+          navigate('Home', { name: 'Jane' })
+        }
+      />
+    );
+  }
+}
