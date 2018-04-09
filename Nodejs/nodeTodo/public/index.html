@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="inputTodo">
+    <button id="addButton">Add</button>
+
+    <ul id="list">
+
+    </ul>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    getList();
+    $("#addButton").on("click", function(){
+        var data = { title : $("#inputTodo").val()};
+        $.ajax({
+            url: "/todo",
+            data: data,
+            type: "POST"
+        }).then(function(res){
+            console.log(res)
+            $("#inputTodo").val("")
+            getList();
+        })
+    });
+
+    function getList(){
+        $.ajax({
+        url: "/todo",
+        type: "GET"
+        }).then(function(res){
+            var li = "";
+            res.forEach(function(item){
+                li += `<li>${item.title} <button onclick="removeTodo('${item._id}')">remove</button><button onclick='update("${item._id}")'>Update</button></li>`;
+            });
+            $("#list").html(li);
+        });
+    }
+
+    function removeTodo(id){
+        var data = {_id: id};
+        $.ajax({
+            url: "/todo",
+            type: "DELETE",
+            data: data
+        }).then(function(){
+            getList();
+        })
+    }
+
+    function update(id){
+        if($("#inputTodo").val() != ""){
+            var data = {_id:id,title:$("#inputTodo").val()};
+        $.ajax({
+            url: "/todo",
+            type: "put",
+            data: data
+        }).then(function(){
+            getList();
+        })
+        }
+        
+    }
+
+
+    </script>
+</body>
+</html>
